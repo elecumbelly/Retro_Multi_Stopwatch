@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multi Stopwatch</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="dashboard">
+      <h1 class="title">Retro Multi-Stopwatch</h1>
+      <p class="subtitle">
+        Eight independent timers with a classic digital glow.
+      </p>
+      <div class="toolbar">
+        <button class="btn capture" id="capture-btn">Capture Snapshot</button>
+      </div>
+      <div class="stopwatch-grid" id="stopwatch-grid">
+        <section class="stopwatch" data-stopwatch="1">
+          <header>
+            <label class="name-editor">
+              <span class="sr-only">Stopwatch name</span>
+              <input
+                class="name-input"
+                type="text"
+                inputmode="latin"
+                autocomplete="off"
+                spellcheck="false"
+                maxlength="24"
+                value="Stopwatch 1"
+              />
+            </label>
+          </header>
+          <div class="display" aria-live="polite">00:00.0</div>
+          <div class="controls">
+            <button class="btn start">Start</button>
+            <button class="btn stop" disabled>Stop</button>
+            <button class="btn reset">Reset</button>
+          </div>
+        </section>
+        <section class="stopwatch" data-stopwatch="2">
+          <header>
+            <label class="name-editor">
+              <span class="sr-only">Stopwatch name</span>
+              <input
+                class="name-input"
+                type="text"
+                inputmode="latin"
+                autocomplete="off"
+                spellcheck="false"
+                maxlength="24"
+                value="Stopwatch 2"
+              />
+            </label>
+          </header>
+          <div class="display" aria-live="polite">00:00.0</div>
+          <div class="controls">
+            <button class="btn start">Start</button>
+            <button class="btn stop" disabled>Stop</button>
+            <button class="btn reset">Reset</button>
+          </div>
+        </section>
+        <section class="stopwatch" data-stopwatch="3">
+          <header>
+            <label class="name-editor">
+              <span class="sr-only">Stopwatch name</span>
+              <input
+                class="name-input"
+                type="text"
+                inputmode="latin"
+                autocomplete="off"
+                spellcheck="false"
+                maxlength="24"
+                value="Stopwatch 3"
+              />
+            </label>
+          </header>
+          <div class="display" aria-live="polite">00:00.0</div>
+          <div class="controls">
+            <button class="btn start">Start</button>
+            <button class="btn stop" disabled>Stop</button>
+            <button class="btn reset">Reset</button>
+          </div>
+        </section>
+        <section class="stopwatch" data-stopwatch="4">
+          <header>
+            <label class="name-editor">
+              <span class="sr-only">Stopwatch name</span>
+              <input
+                class="name-input"
+                type="text"
+                inputmode="latin"
+                autocomplete="off"
+                spellcheck="false"
+                maxlength="24"
+                value="Stopwatch 4"
+              />
+            </label>
+          </header>
+          <div class="display" aria-live="polite">00:00.0</div>
+          <div class="controls">
+            <button class="btn start">Start</button>
+            <button class="btn stop" disabled>Stop</button>
+            <button class="btn reset">Reset</button>
+          </div>
+        </section>
+        <section class="stopwatch" data-stopwatch="5">
+          <header>
+            <label class="name-editor">
+              <span class="sr-only">Stopwatch name</span>
+              <input
+                class="name-input"
+                type="text"
+                inputmode="latin"
+                autocomplete="off"
+                spellcheck="false"
+                maxlength="24"
+                value="Stopwatch 5"
+              />
+            </label>
+          </header>
+          <div class="display" aria-live="polite">00:00.0</div>
+          <div class="controls">
+            <button class="btn start">Start</button>
+            <button class="btn stop" disabled>Stop</button>
+            <button class="btn reset">Reset</button>
+          </div>
+        </section>
+        <section class="stopwatch" data-stopwatch="6">
+          <header>
+            <label class="name-editor">
+              <span class="sr-only">Stopwatch name</span>
+              <input
+                class="name-input"
+                type="text"
+                inputmode="latin"
+                autocomplete="off"
+                spellcheck="false"
+                maxlength="24"
+                value="Stopwatch 6"
+              />
+            </label>
+          </header>
+          <div class="display" aria-live="polite">00:00.0</div>
+          <div class="controls">
+            <button class="btn start">Start</button>
+            <button class="btn stop" disabled>Stop</button>
+            <button class="btn reset">Reset</button>
+          </div>
+        </section>
+        <section class="stopwatch" data-stopwatch="7">
+          <header>
+            <label class="name-editor">
+              <span class="sr-only">Stopwatch name</span>
+              <input
+                class="name-input"
+                type="text"
+                inputmode="latin"
+                autocomplete="off"
+                spellcheck="false"
+                maxlength="24"
+                value="Stopwatch 7"
+              />
+            </label>
+          </header>
+          <div class="display" aria-live="polite">00:00.0</div>
+          <div class="controls">
+            <button class="btn start">Start</button>
+            <button class="btn stop" disabled>Stop</button>
+            <button class="btn reset">Reset</button>
+          </div>
+        </section>
+        <section class="stopwatch" data-stopwatch="8">
+          <header>
+            <label class="name-editor">
+              <span class="sr-only">Stopwatch name</span>
+              <input
+                class="name-input"
+                type="text"
+                inputmode="latin"
+                autocomplete="off"
+                spellcheck="false"
+                maxlength="24"
+                value="Stopwatch 8"
+              />
+            </label>
+          </header>
+          <div class="display" aria-live="polite">00:00.0</div>
+          <div class="controls">
+            <button class="btn start">Start</button>
+            <button class="btn stop" disabled>Stop</button>
+            <button class="btn reset">Reset</button>
+          </div>
+        </section>
+      </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

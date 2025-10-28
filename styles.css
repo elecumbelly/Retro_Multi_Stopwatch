@@ -1,0 +1,253 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap");
+
+:root {
+  color-scheme: dark;
+  --panel-bg: rgba(5, 12, 8, 0.82);
+  --panel-border: #1b3b2a;
+  --digit-color: #36ff8f;
+  --digit-dim: rgba(54, 255, 143, 0.32);
+  --accent: #23d96b;
+  --accent-dark: #0c572c;
+  --accent-shadow: rgba(10, 226, 106, 0.35);
+  --text-muted: #8ea491;
+  --grid-gap: clamp(1rem, 2vw, 1.75rem);
+  font-family: "Orbitron", "Courier New", Courier, monospace;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+  background-color: #080f0a;
+  color: #f4f4f4;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at 20% -20%, #2f4232, transparent 55%),
+    radial-gradient(circle at 80% -10%, #1d1d1d, transparent 60%),
+    #040806;
+  color: inherit;
+}
+
+.dashboard {
+  width: min(1150px, 92vw);
+  padding: clamp(1.5rem, 3vw, 2.75rem);
+  background: linear-gradient(145deg, rgba(18, 33, 24, 0.85), rgba(5, 10, 7, 0.95));
+  border: 1px solid rgba(10, 20, 14, 0.85);
+  border-radius: 18px;
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(34, 76, 48, 0.25);
+  backdrop-filter: blur(6px);
+}
+
+.title {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  letter-spacing: 0.12em;
+  text-align: center;
+  color: var(--digit-color);
+  text-shadow: 0 0 12px rgba(54, 255, 143, 0.75);
+}
+
+.subtitle {
+  margin: 0 0 clamp(1.25rem, 3vw, 2rem);
+  text-align: center;
+  color: var(--text-muted);
+  font-size: clamp(0.75rem, 2vw, 0.95rem);
+  letter-spacing: 0.2em;
+}
+
+.stopwatch-grid {
+  display: grid;
+  gap: var(--grid-gap);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.toolbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: clamp(1.25rem, 3vw, 2rem);
+}
+
+.stopwatch {
+  display: grid;
+  gap: 1rem;
+  padding: clamp(1.1rem, 2vw, 1.5rem);
+  border-radius: 14px;
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.55),
+    0 12px 30px rgba(0, 0, 0, 0.55);
+}
+
+.stopwatch header {
+  display: flex;
+  align-items: center;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  letter-spacing: 0.35em;
+}
+
+.name-editor {
+  width: 100%;
+  display: block;
+}
+
+.name-input {
+  width: 100%;
+  border: 1px solid rgba(26, 76, 48, 0.7);
+  border-radius: 6px;
+  padding: 0.45rem 0.6rem;
+  background: linear-gradient(135deg, rgba(6, 24, 14, 0.8), rgba(4, 16, 10, 0.95));
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.32em;
+  font: inherit;
+  text-align: center;
+  transition: border-color 140ms ease, box-shadow 140ms ease, background 140ms ease;
+}
+
+.name-input::selection {
+  background: rgba(54, 255, 143, 0.35);
+}
+
+.name-input:focus {
+  outline: none;
+  border-color: rgba(54, 255, 143, 0.85);
+  box-shadow: 0 0 12px rgba(54, 255, 143, 0.35);
+  background: linear-gradient(135deg, rgba(10, 36, 24, 0.85), rgba(8, 18, 14, 0.95));
+  color: var(--digit-color);
+}
+
+.name-input:focus::placeholder {
+  color: rgba(54, 255, 143, 0.45);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.display {
+  font-size: clamp(1.65rem, 4vw, 2.35rem);
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  background: linear-gradient(140deg, rgba(1, 12, 6, 0.95), rgba(0, 0, 0, 0.85));
+  border: 1px solid rgba(22, 55, 32, 0.9);
+  color: var(--digit-dim);
+  text-shadow: 0 0 8px rgba(54, 255, 143, 0.4),
+    0 0 18px rgba(54, 255, 143, 0.15);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.18em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-shadow: inset 0 0 18px rgba(0, 0, 0, 0.45),
+    0 0 30px rgba(54, 255, 143, 0.25);
+}
+
+.display::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  pointer-events: none;
+}
+
+.display.running {
+  color: var(--digit-color);
+  text-shadow: 0 0 14px rgba(54, 255, 143, 0.85),
+    0 0 30px rgba(54, 255, 143, 0.35);
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.65rem;
+}
+
+.btn {
+  font: inherit;
+  padding: 0.55rem 0.6rem;
+  border: 1px solid rgba(26, 130, 66, 0.85);
+  border-radius: 8px;
+  color: #09140c;
+  background: linear-gradient(160deg, var(--accent), #129c47);
+  box-shadow: 0 0 18px var(--accent-shadow), inset 0 0 12px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+  transition: transform 120ms ease, box-shadow 120ms ease, filter 120ms ease;
+  letter-spacing: 0.2em;
+}
+
+.btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  filter: brightness(1.1);
+  box-shadow: 0 0 22px var(--accent-shadow), inset 0 0 12px rgba(0, 0, 0, 0.35);
+}
+
+.btn:active:not(:disabled) {
+  transform: translateY(1px);
+  filter: brightness(0.95);
+  box-shadow: 0 0 8px var(--accent-shadow), inset 0 0 12px rgba(0, 0, 0, 0.45);
+}
+
+.btn.stop {
+  background: linear-gradient(160deg, #ff4f58, #a01d26);
+  border-color: rgba(168, 30, 38, 0.9);
+  color: #220506;
+}
+
+.btn.reset {
+  background: linear-gradient(160deg, #34b6ff, #175680);
+  border-color: rgba(24, 94, 134, 0.85);
+  color: #031b28;
+}
+
+.btn.capture {
+  padding-inline: clamp(1rem, 3vw, 1.75rem);
+  background: linear-gradient(160deg, #ffe66d, #d4a417);
+  border-color: rgba(198, 146, 20, 0.85);
+  color: #241a05;
+  box-shadow: 0 0 18px rgba(255, 228, 109, 0.35), inset 0 0 12px rgba(0, 0, 0, 0.35);
+}
+
+.btn.capture:hover:not(:disabled) {
+  box-shadow: 0 0 22px rgba(255, 228, 109, 0.45),
+    inset 0 0 12px rgba(0, 0, 0, 0.35);
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.35;
+  box-shadow: none;
+  filter: saturate(60%);
+}
+
+@media (max-width: 600px) {
+  :root {
+    letter-spacing: 0.05em;
+  }
+
+  .controls {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .controls .btn:nth-child(3) {
+    grid-column: span 2;
+  }
+}
