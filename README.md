@@ -56,3 +56,10 @@ Retro_Multi_Stopwatch/
 ## License
 
 This project is released under the [MIT License](LICENSE) — use it, remix it, and share it freely.
+
+## Progressive Web App
+
+- Installs like a native app thanks to the manifest and service worker.
+- Serve the folder locally (for example, `python3 -m http.server 8000`) and open it in Chrome, Edge, or another PWA-capable browser.
+- Use the browser menu (usually “Install Retro Multi-Stopwatch”) to pin it to your dock or home screen.
+- Offline support is enabled: once installed, the dashboard and snapshot helper load without an internet connection.

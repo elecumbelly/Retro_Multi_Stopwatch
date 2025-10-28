@@ -1,0 +1,26 @@
+{
+  "name": "Retro Multi-Stopwatch",
+  "short_name": "Retro Timer",
+  "description": "Eight neon stopwatches with snapshots, ready to install as a standalone app.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#040806",
+  "theme_color": "#36ff8f",
+  "icons": [
+    {
+      "src": "assets/icons/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "assets/icons/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "assets/icons/app-icon.svg",
+      "type": "image/svg+xml",
+      "sizes": "512x512"
+    }
+  ]
+}
